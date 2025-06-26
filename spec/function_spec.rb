@@ -83,7 +83,7 @@ describe 'compiled component lambda' do
       end
       
       it "to have property Runtime" do
-          expect(resource["Properties"]["Runtime"]).to eq("python3.9")
+          expect(resource["Properties"]["Runtime"]).to eq("python3.10")
       end
       
       it "to have property Timeout" do
