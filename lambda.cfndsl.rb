@@ -56,6 +56,7 @@ CloudFormation do
       Role(FnGetAtt("#{function_name}Role", 'Arn'))
       Runtime(lambda_config['runtime'])
       Timeout(lambda_config['timeout'] || 10)
+      Layers(lambda_config['layers']) if lambda_config.has_key?('layers')
       if (lambda_config.has_key? 'enable_eni') && (lambda_config['enable_eni'])
         VpcConfig({
           SecurityGroupIds: [

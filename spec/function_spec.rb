@@ -98,6 +98,10 @@ describe 'compiled component lambda' do
           expect(resource["Properties"]["Tags"]).to eq([{"Key"=>"Environment", "Value"=>{"Ref"=>"EnvironmentName"}}, {"Key"=>"EnvironmentType", "Value"=>{"Ref"=>"EnvironmentType"}}])
       end
       
+      it "to have property Layers" do
+          expect(resource["Properties"]["Layers"]).to eq(["arn:aws:lambda:us-east-1:123456789012:layer:my-layer:1"])
+      end
+      
     end
     
     context "myfunctionLogGroup" do
